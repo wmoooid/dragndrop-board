@@ -1,0 +1,28 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Noto Sans Display', sans-serif;
+  letter-spacing: -0.02em;
+  background-color: #f8f6f5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  color: #333333;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breaker {
+  height: 24px;
+}

@@ -1,0 +1,79 @@
+.box {
+  position: relative;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.menuButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.preview {
+  position: relative;
+  height: 175px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.tagsBox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.tagsRed,
+.tagsGreen,
+.tagsBlue {
+  margin-right: 8px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 30px;
+}
+
+.tagsRed {
+  color: #d99a6c;
+  background-color: #fff8f2;
+}
+
+.tagsGreen {
+  color: #60bf97;
+  background-color: #effcf7;
+}
+
+.tagsBlue {
+  color: #6cb5d9;
+  background-color: #f0f8fc;
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 400;
+  color: #595959;
+}
+
+.creationDate {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.creationDateText {
+  margin-left: 4px;
+  font-size: 12px;
+  line-height: 1;
+  color: #808080;
+}

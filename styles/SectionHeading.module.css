@@ -1,0 +1,23 @@
+.box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dot {
+  display: block;
+  margin-right: 8px;
+  width: 8px;
+  height: 8px;
+  background: #60bf97;
+  border-radius: 50%;
+  transform: translateY(3px);
+}
+
+.heading {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 600;
+}
