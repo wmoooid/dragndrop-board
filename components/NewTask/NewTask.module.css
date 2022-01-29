@@ -36,6 +36,10 @@
   color: #a6a6a6;
 }
 
+.inputImage {
+  cursor: pointer;
+}
+
 .buttonAdd {
   display: flex;
   flex-direction: column;

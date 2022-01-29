@@ -10,20 +10,24 @@ import Tags from './Tags';
 export interface ITaskCardProps {
   id?: string;
   title: string;
-  image?: any;
+  image?: string;
   tags?: any;
   text: string;
   date?: any;
 }
 
-const TaskCard: React.FC<ITaskCardProps> = ({ title, text }) => {
+const TaskCard: React.FC<ITaskCardProps> = ({ title, text, image }) => {
   return (
     <li className='box'>
       <Heading title={title} />
       <Breaker />
       <MenuButton />
-      <Preview />
-      <Breaker />
+      {image && (
+        <>
+          <Preview image={image} />
+          <Breaker />
+        </>
+      )}
       <Tags />
       <Breaker />
       <Description text={text} />

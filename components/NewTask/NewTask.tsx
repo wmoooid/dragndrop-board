@@ -17,18 +17,38 @@ const NewTask: React.FC = () => {
     setText(event.target.value);
   }
 
+  const [image, setImage] = React.useState('');
+  const inputImageRef = React.useRef<HTMLInputElement>(null);
+  function handleImageUpload(event: Event): void {
+    const file = (event.target as HTMLInputElement).files![0];
+    const fileUrl = URL.createObjectURL(file);
+    setImage(fileUrl);
+  }
+
+  React.useEffect(() => {
+    if (inputImageRef.current) {
+      inputImageRef.current.addEventListener('change', handleImageUpload);
+    }
+  });
+
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    addTask({ id: generateRandomString(), title: title, text: text });
+    addTask({ id: generateRandomString(), title: title, text: text, image: image });
     setTitle('');
     setText('');
   }
 
   return (
     <form className='box' onSubmit={handleSubmit}>
-      <input className={styles.inputTitle} onChange={handleTitleChange} type='text' placeholder='Title' />
+      <input value={title} className={styles.inputTitle} onChange={handleTitleChange} type='text' placeholder='Title' />
       <Breaker />
-      <textarea className={styles.inputText} onChange={handleTextChange} name='description' id='description' placeholder='Take a note...'></textarea>
+      <textarea
+        value={text}
+        className={styles.inputText}
+        onChange={handleTextChange}
+        name='description'
+        id='description'
+        placeholder='Take a note...'></textarea>
       <Breaker />
       <div className={styles.propsBox}>
         <ul className='tagsBox'>
@@ -36,7 +56,7 @@ const NewTask: React.FC = () => {
           <li className='tagsGreen'>Templates</li>
           <li className='tagsBlue'>Dashboard</li>
         </ul>
-        <span>
+        <label className={styles.inputImage} htmlFor='image'>
           <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
             <path
               fillRule='evenodd'
@@ -55,7 +75,8 @@ const NewTask: React.FC = () => {
               fill='#595959'
             />
           </svg>
-        </span>
+        </label>
+        <input id='image' ref={inputImageRef} type='file' hidden />
       </div>
       <Breaker />
       <input className={styles.buttonAdd} type='submit' value='Add new task' />
