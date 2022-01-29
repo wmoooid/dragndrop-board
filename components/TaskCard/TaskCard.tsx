@@ -1,13 +1,36 @@
-import { NextPage } from 'next';
 import { ReactNode } from 'react';
-import styles from '../../styles/TaskCard.module.css';
+import Breaker from '../Breaker';
+import CreationDate from './CreationDate';
+import Description from './Description';
+import Heading from './Heading';
+import MenuButton from './MenuButton';
+import Preview from './Preview';
+import Tags from './Tags';
 
-interface ICardProps {
-  children: ReactNode;
+export interface ITaskCardProps {
+  id?: string;
+  title: string;
+  image?: any;
+  tags?: any;
+  text: string;
+  date?: any;
 }
 
-const TaskCard: NextPage<ICardProps> = ({ children }) => {
-  return <li className={styles.box}>{children}</li>;
+const TaskCard: React.FC<ITaskCardProps> = ({ title, text }) => {
+  return (
+    <li className='box'>
+      <Heading title={title} />
+      <Breaker />
+      <MenuButton />
+      <Preview />
+      <Breaker />
+      <Tags />
+      <Breaker />
+      <Description text={text} />
+      <Breaker />
+      <CreationDate />
+    </li>
+  );
 };
 
 export default TaskCard;

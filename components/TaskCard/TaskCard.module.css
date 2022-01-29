@@ -1,0 +1,18 @@
+.menuButton {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.preview {
+  position: relative;
+  height: 175px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.creationDate {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}

@@ -1,12 +1,9 @@
-import type { NextPage } from 'next';
-import styles from '../../styles/TaskCard.module.css';
-
-const Tags: NextPage = () => {
+const Tags: React.FC = () => {
   return (
-    <ul className={styles.tagsBox}>
-      <li className={styles.tagsRed}>Design</li>
-      <li className={styles.tagsGreen}>Templates</li>
-      <li className={styles.tagsBlue}>Dashboard</li>
+    <ul className='tagsBox'>
+      <li className='tagsRed'>Design</li>
+      <li className='tagsGreen'>Templates</li>
+      <li className='tagsBlue'>Dashboard</li>
     </ul>
   );
 };

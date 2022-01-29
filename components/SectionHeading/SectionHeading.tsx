@@ -1,7 +1,6 @@
-import type { NextPage } from 'next';
-import styles from '../styles/SectionHeading.module.css';
+import styles from './SectionHeading.module.css';
 
-const SectionHeading: NextPage = () => {
+const SectionHeading: React.FC = () => {
   return (
     <div className={styles.box}>
       <span className={styles.dot}></span>

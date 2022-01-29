@@ -1,8 +1,9 @@
-import type { NextPage } from 'next';
-import styles from '../../styles/TaskCard.module.css';
+interface IHeadingProps {
+  title: string;
+}
 
-const Heading: NextPage = () => {
-  return <h2 className={styles.heading}>Edit Unity UI Kit</h2>;
+const Heading: React.FC<IHeadingProps> = ({ title }) => {
+  return <h2 className='h2'>{title}</h2>;
 };
 
 export default Heading;

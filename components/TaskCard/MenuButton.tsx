@@ -1,7 +1,6 @@
-import type { NextPage } from 'next';
-import styles from '../../styles/TaskCard.module.css';
+import styles from './TaskCard.module.css';
 
-const MenuButton: NextPage = () => {
+const MenuButton: React.FC = () => {
   return (
     <span className={styles.menuButton}>
       <svg width='24' height='7' viewBox='0 0 24 7' fill='none' xmlns='http://www.w3.org/2000/svg'>

@@ -1,7 +1,6 @@
-import type { NextPage } from 'next';
-import styles from '../../styles/TaskCard.module.css';
+import styles from './TaskCard.module.css';
 
-const CreationDate: NextPage = () => {
+const CreationDate: React.FC = () => {
   return (
     <div className={styles.creationDate}>
       <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -49,7 +48,7 @@ const CreationDate: NextPage = () => {
         />
       </svg>
 
-      <small className={styles.creationDateText}>11 August 2021</small>
+      <small className='caption'>11 August 2021</small>
     </div>
   );
 };

@@ -1,6 +1,4 @@
-import { ReactNode } from 'react';
-
-const Breaker: ReactNode = () => {
+const Breaker: React.FC = () => {
   return <div className='breaker'></div>;
 };
 

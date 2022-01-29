@@ -1,8 +1,9 @@
-import type { NextPage } from 'next';
-import styles from '../../styles/TaskCard.module.css';
+interface IDescriptionProps {
+  text: string;
+}
 
-const Description: NextPage = () => {
-  return <p className={styles.description}>Make changes to create a new wireframes template for new projects</p>;
+const Description: React.FC<IDescriptionProps> = ({ text }) => {
+  return <p className='bodyText'> {text} </p>;
 };
 
 export default Description;

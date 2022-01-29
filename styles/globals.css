@@ -23,6 +23,78 @@ ul {
   padding: 0;
 }
 
+input {
+  border: none;
+}
+
+textarea {
+  border: none;
+  resize: none;
+}
+
 .breaker {
   height: 24px;
+}
+
+.box {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 20px;
+}
+
+.h2 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.tagsBox {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.tagsRed,
+.tagsGreen,
+.tagsBlue {
+  margin-right: 8px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 30px;
+}
+
+.tagsRed {
+  color: #d99a6c;
+  background-color: #fff8f2;
+}
+
+.tagsGreen {
+  color: #60bf97;
+  background-color: #effcf7;
+}
+
+.tagsBlue {
+  color: #6cb5d9;
+  background-color: #f0f8fc;
+}
+
+.bodyText {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 400;
+  color: #595959;
+}
+
+.caption {
+  margin-left: 4px;
+  font-size: 12px;
+  line-height: 1;
+  color: #808080;
 }
