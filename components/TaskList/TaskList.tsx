@@ -16,8 +16,8 @@ export const TaskContext = React.createContext<ITaskContextProps>({} as ITaskCon
 const TaskList: React.FC = () => {
   const [taskList, setTaskList] = React.useState<TTaskListProps>([]);
 
-  function addTask({ id, title, text, image }: ITaskCardProps) {
-    const newTask = { id: id, title: title, text: text, image: image };
+  function addTask({ id, title, text, image, date }: ITaskCardProps) {
+    const newTask = { id: id, title: title, text: text, image: image, date: date };
     const newList = [...taskList, newTask] as TTaskListProps;
     console.log(newList);
     setTaskList(newList);
@@ -28,8 +28,8 @@ const TaskList: React.FC = () => {
       <ul className={styles.box}>
         <NewTask />
         <Breaker />
-        {taskList.map(({ id, title, text, image }) => (
-          <TaskCard key={id} title={title} text={text} image={image} />
+        {taskList.map(({ id, title, text, image, date }) => (
+          <TaskCard key={id} title={title} text={text} image={image} date={date} />
         ))}
       </ul>
     </TaskContext.Provider>

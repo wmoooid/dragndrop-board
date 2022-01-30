@@ -7,16 +7,19 @@ import styles from './NewTask.module.css';
 const NewTask: React.FC = () => {
   const { addTask } = React.useContext(TaskContext);
 
+  // Title
   const [title, setTitle] = React.useState('');
   function handleTitleChange(event: ChangeEvent<HTMLInputElement>) {
     setTitle(event.target.value);
   }
 
+  // Text
   const [text, setText] = React.useState('');
   function handleTextChange(event: ChangeEvent<HTMLTextAreaElement>) {
     setText(event.target.value);
   }
 
+  // Image
   const [image, setImage] = React.useState('');
   const inputImageRef = React.useRef<HTMLInputElement>(null);
   function handleImageUpload(event: Event): void {
@@ -31,12 +34,24 @@ const NewTask: React.FC = () => {
     }
   });
 
+  // Submit
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
-    addTask({ id: generateRandomString(), title: title, text: text, image: image });
+    const currentDate = new Date();
+    addTask({ id: generateRandomString(), title: title, text: text, image: image, date: currentDate });
     setTitle('');
     setText('');
   }
+
+  function validateInput() {
+    if (title.length < 1 && text.length < 1) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  const isInputEmpty = !validateInput();
 
   return (
     <form className='box' onSubmit={handleSubmit}>
@@ -79,7 +94,7 @@ const NewTask: React.FC = () => {
         <input id='image' ref={inputImageRef} type='file' hidden />
       </div>
       <Breaker />
-      <input className={styles.buttonAdd} type='submit' value='Add new task' />
+      <input className={styles.buttonAdd} type='submit' value='Add new task' disabled={isInputEmpty} />
     </form>
   );
 };

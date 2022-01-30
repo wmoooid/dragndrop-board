@@ -1,6 +1,16 @@
 import styles from './TaskCard.module.css';
 
-const CreationDate: React.FC = () => {
+interface ICreationDateProps {
+  date: Date;
+}
+
+const CreationDate: React.FC<ICreationDateProps> = ({ date }) => {
+  // Types of property 'year' are incompatible.
+  // Type 'string' is not assignable to type '"numeric" | "2-digit" | undefined'.
+  // ¯\_(ツ)_/¯
+  const options: any = { year: 'numeric', month: 'long', day: 'numeric' };
+  const creationDate = date.toLocaleDateString('en-GB', options);
+
   return (
     <div className={styles.creationDate}>
       <svg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
@@ -48,7 +58,7 @@ const CreationDate: React.FC = () => {
         />
       </svg>
 
-      <small className='caption'>11 August 2021</small>
+      <small className='caption'>{creationDate}</small>
     </div>
   );
 };

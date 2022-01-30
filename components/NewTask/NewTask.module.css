@@ -53,3 +53,7 @@
   border: none;
   border-radius: 15px;
 }
+
+.buttonAdd:disabled {
+  opacity: 0.5;
+}

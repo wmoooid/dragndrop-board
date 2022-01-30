@@ -13,10 +13,10 @@ export interface ITaskCardProps {
   image?: string;
   tags?: any;
   text: string;
-  date?: any;
+  date: Date;
 }
 
-const TaskCard: React.FC<ITaskCardProps> = ({ title, text, image }) => {
+const TaskCard: React.FC<ITaskCardProps> = ({ title, text, image, date }) => {
   return (
     <li className='box'>
       <Heading title={title} />
@@ -32,7 +32,7 @@ const TaskCard: React.FC<ITaskCardProps> = ({ title, text, image }) => {
       <Breaker />
       <Description text={text} />
       <Breaker />
-      <CreationDate />
+      <CreationDate date={date} />
     </li>
   );
 };
