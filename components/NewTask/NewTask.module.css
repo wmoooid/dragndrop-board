@@ -1,3 +1,39 @@
+.dropArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 175px;
+  border-radius: 15px;
+  border: 1px dashed #999999;
+  border-radius: 15px;
+}
+
+.dragArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 175px;
+  border-radius: 15px;
+  border: 1px dashed #bfbfbf;
+  border-radius: 15px;
+}
+
+.dragAreaText {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #bfbfbf;
+}
+
+.dropAreaText {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #999999;
+}
+
 .inputTitle {
   font-size: 18px;
   line-height: 1.35;
@@ -22,7 +58,7 @@
 }
 
 .inputText {
-  min-height: 200px;
+  min-height: 100px;
   font-family: 'Noto Sans Display', sans-serif;
   font-size: 14px;
   line-height: 19px;
@@ -40,6 +76,12 @@
   cursor: pointer;
 }
 
+.imageDelete {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+
 .buttonAdd {
   display: flex;
   flex-direction: column;
@@ -55,5 +97,6 @@
 }
 
 .buttonAdd:disabled {
-  opacity: 0.5;
+  color: #808080;
+  background: #f2f2f2;
 }

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import Breaker from '../Breaker';
+import Breaker from '../../assets/Breaker';
 import CreationDate from './CreationDate';
 import Description from './Description';
 import Heading from './Heading';
@@ -19,8 +19,12 @@ export interface ITaskCardProps {
 const TaskCard: React.FC<ITaskCardProps> = ({ title, text, image, date }) => {
   return (
     <li className='box'>
-      <Heading title={title} />
-      <Breaker />
+      {title && (
+        <>
+          <Heading title={title} />
+          <Breaker />
+        </>
+      )}
       <MenuButton />
       {image && (
         <>
@@ -30,8 +34,12 @@ const TaskCard: React.FC<ITaskCardProps> = ({ title, text, image, date }) => {
       )}
       <Tags />
       <Breaker />
-      <Description text={text} />
-      <Breaker />
+      {text && (
+        <>
+          <Description text={text} />
+          <Breaker />
+        </>
+      )}
       <CreationDate date={date} />
     </li>
   );

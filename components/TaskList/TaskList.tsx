@@ -1,5 +1,5 @@
 import styles from './TaskList.module.css';
-import Breaker from '../Breaker';
+import Breaker from '../../assets/Breaker';
 import TaskCard, { ITaskCardProps } from '../TaskCard/TaskCard';
 import NewTask from '../NewTask/NewTask';
 import React from 'react';
