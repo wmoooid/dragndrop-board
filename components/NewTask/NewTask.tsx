@@ -92,6 +92,7 @@ const NewTask: React.FC = () => {
 
   return (
     <form className='box' onSubmit={handleSubmit}>
+      <input value={title} className={styles.inputTitle} onChange={handleTitleChange} type='text' placeholder='Title' />
       <Breaker />
       <textarea
         value={text}
